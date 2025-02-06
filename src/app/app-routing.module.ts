@@ -16,8 +16,8 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'recovery', component: RecoveryComponent},
   {path:'profile', component: ProfileComponent},
-  {path:'', redirectTo: '/home', pathMatch: 'full'},
-  {path: '**', component: NotFoundComponent}
+  // {path:'', redirectTo: '/home', pathMatch: 'full'},
+  // {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
