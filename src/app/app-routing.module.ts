@@ -9,6 +9,7 @@ import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
+  {path:'', redirectTo:'/home', pathMatch: 'full'},
   {path:'home', component: HomeComponent},
   {path:'not-found', component: NotFoundComponent},
   {path:'category/:id', component: CategoryComponent},
