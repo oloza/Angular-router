@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-category',
-  templateUrl: './category.component.html',
+  template: `<app-products [products]="products" (loadMore)="onLoadMore()"></app-products>`,
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
@@ -20,18 +21,32 @@ export class CategoryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.categoryId=params.get('id');
-      console.log(this.categoryId); 
-      if(this.categoryId){
-        this.productsService.getByCategory(this.categoryId,this.limit,this.offset)
-        .subscribe((data) => {
+    this.route.paramMap
+    .pipe(
+      switchMap(params => {
+        this.categoryId = params.get('id');
+        if(this.categoryId){
+          return this.productsService.getByCategory(this.categoryId,this.limit,this.offset)
+          // .subscribe((data) => {
+            // this.products=data;
+          // });
+       }
+       return [];
+      }),  
+    )
+    .subscribe((data) => {
           this.products=data;
           // console.log(data);
         });
-
       }
-    });
-  }
 
+onLoadMore() {
+    if(this.categoryId){
+        this.productsService.getByCategory(this.categoryId, this.limit,this.offset)
+        .subscribe((data) => { this
+          this.products = this.products.concat(data);
+          this.offset += this.limit;
+        });
+      }      
+    }
 }
