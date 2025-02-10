@@ -17,5 +17,27 @@ or redirect
 refactoring app.products 
 its necessary to import an "Input"  from '@angular/core'; 
 we don't need the ngOnInit
- 
+
+# category page
+products.component.html
+   <button (click)="onLoadMore()">Load more</button>
+products.component.ts
+    @Output() loadMore = new EventEmitter();
+    onLoadMore() {
+      this.loadMore.emit();
+    }
+home.component.html
+   <app-products [products]="products" (loadMore)="onLoadMore()"></app-products>
+home.component.ts
+    onLoadMore() {
+        this.productsService.getAll(this.limit, this.offset).subscribe((data) => {
+        this.products = this.products.concat(data);
+        this.offset += this.limit;
+        });
+    }
+ in the router category add "id" parameter 
+    category/:id
+ for parameter we must add ActivateRoute from @angular/router
+    import { ActivatedRoute } from '@angular/router';
+
 

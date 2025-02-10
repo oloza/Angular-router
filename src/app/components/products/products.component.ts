@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { switchMap } from 'rxjs/operators';
 
 import {
@@ -16,9 +16,12 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent  {
+  
+  @Input() products: Product[] = [];
+  @Output() loadMore = new EventEmitter();
+
   myShoppingCart: Product[] = [];
   total = 0;
-  @Input() products: Product[] = [];
   showProductDetail = false;
   productChosen: Product | null = null;
   // limit = 10;
@@ -111,4 +114,7 @@ export class ProductsComponent  {
   //     this.offset += this.limit;
   //   });
   // }
+  onLoadMore() {
+    this.loadMore.emit();
+  }
 }
