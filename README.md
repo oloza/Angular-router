@@ -40,4 +40,10 @@ home.component.ts
  for parameter we must add ActivateRoute from @angular/router
     import { ActivatedRoute } from '@angular/router';
 
+# routerLink and routerActive
+routerLink='/home'
+[routerLInk]="['/category',item.id]"     `dinamic way`
 
+    class="active"
+    routerLinkActive="active"
+    
