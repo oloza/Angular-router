@@ -22,6 +22,7 @@ import { MyCartComponent } from './pages/my-cart/my-cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MyCartComponent,
     LoginComponent,
     RecoveryComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

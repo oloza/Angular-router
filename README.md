@@ -46,4 +46,14 @@ routerLink='/home'
 
     class="active"
     routerLinkActive="active"
-    
+
+# ruta 404
+    at the end of router
+    path:'**', component: NotFoundComponent
+
+# detalle de cada producto
+ -for navigate back we can use navigate
+ import {location} from '@angular/common';
+ -in the procedure:
+ this.location.back();
+

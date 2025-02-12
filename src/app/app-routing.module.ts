@@ -7,18 +7,19 @@ import { MyCartComponent } from './pages/my-cart/my-cart.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RecoveryComponent } from './pages/recovery/recovery.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'/home', pathMatch: 'full'},
   {path:'home', component: HomeComponent},
-  {path:'not-found', component: NotFoundComponent},
   {path:'category/:id', component: CategoryComponent},
+  {path:'product/:id', component: ProductDetailComponent},
   {path:'my-cart', component: MyCartComponent},
   {path:'login', component: LoginComponent},
   {path:'recovery', component: RecoveryComponent},
   {path:'profile', component: ProfileComponent},
   // {path:'', redirectTo: '/home', pathMatch: 'full'},
-  // {path: '**', component: NotFoundComponent}
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
