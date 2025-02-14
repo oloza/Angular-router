@@ -56,4 +56,19 @@ routerLink='/home'
  import {location} from '@angular/common';
  -in the procedure:
  this.location.back();
+ # parametros URL
+ -son opcionales
+ -vienen adjuntos en la Url
+ import {ActivatedRoute} from '@angular/router';
+ ...
+ constructor(private route: ActivatedRoute) {}
+ ngOnInit() {
+    ...
+    this.route.queryParamMap.subscribe..
+en products.component.ts
+-la propiedad set hace que se monitorice todo el tiempo
+      @Input() set productId: string | null = null;
 
+<a routerLink="/home" [queryParams]="{product:product.id}">Ver detalle</a>
+añade el routerLink="." para que vaya la opcion de queryParams  
+<a routerLink="." [queryParams]="{product:product.id}">Ver detalle</a>
