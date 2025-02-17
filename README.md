@@ -114,6 +114,13 @@ el NgModule
     *Feature/Domain Module --valor o p
     *Shared Module -- se utilizan más para componentes, pipes y directivas
 
+# vistas anidadas
+rutas anidadas tenemos nuestro 
+<app-nav></app-nav>   fijo nuetro header
+<router-outlet></router-outlet>
+vemos como podemos cambiar el app-nav según navegaci´n
+
+
 
 
 
