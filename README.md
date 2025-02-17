@@ -72,3 +72,48 @@ en products.component.ts
 <a routerLink="/home" [queryParams]="{product:product.id}">Ver detalle</a>
 añade el routerLink="." para que vaya la opcion de queryParams  
 <a routerLink="." [queryParams]="{product:product.id}">Ver detalle</a>
+
+# Lazy Loading y programacion modular
+vendor.js `todos los providers librerias`
+main.js  `toda la logica`
+runtime.js `interno de Angular` 
+polyfills.js `para funcionar en algunos navegadores`
+
+ `code splitting`
+ -tenemos un empaquetador(rollup, webpack, etc):
+    -tiene que transpilar
+    -transformar sass a css
+    -imagenes las comprime y les pone un hash
+-webpack
+    todos los archivos TS los lleva a MainJS
+
+-code splitting es no tener todos los TS en un MainJS
+-pone todos ls archivos en un Chunk JS
+-cada chunk va cargarse por separado
+
+# programacion modular
+un módulo puede estar compuesto por:
+    *componentes
+    *directivas
+    *interceptros
+    *models
+    *pages
+    *pipes
+    *services
+el NgModule
+@NgModule({
+  imports: [BrowserModule],  --importamos modulos 
+  provides: [Logger]  --los servicios
+  declarations: [AppComponent]--componentes,pipes, directivas
+  exports:[AppComponent]    --si deseas que el modulo sirva a otros modulos
+  bootstrap: [AppComponent]  -- solo lo tiene el modulo principal
+-Existen tipos de modulos
+    *Root Module  --modulo por deault en Angular
+    *Core Module  --gralmente van servicios
+    *Routing Module --para los routings
+    *Feature/Domain Module --valor o p
+    *Shared Module -- se utilizan más para componentes, pipes y directivas
+
+
+
+
