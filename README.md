@@ -123,6 +123,14 @@ quitamos en nav-bar de app.component.html y lo llevamos a layout.component.html
 al tener una linea en app.component.html lo ponemos como template en el componente
 eliminamos el app.componente.html
 
+# Creando un CMS Module
+creamos un content management system
+el flag --routing nos permite crear un modulo con rutas
+`ng g m cms --routing`
+create component tasks
+`ng g c cms/pages/tasks`
+
+
 
 
 
