@@ -118,7 +118,12 @@ el NgModule
 rutas anidadas tenemos nuestro 
 <app-nav></app-nav>   fijo nuetro header
 <router-outlet></router-outlet>
-vemos como podemos cambiar el app-nav según navegaci´n
+vemos como podemos cambiar el app-nav según navegacion
+quitamos en nav-bar de app.component.html y lo llevamos a layout.component.html
+al tener una linea en app.component.html lo ponemos como template en el componente
+eliminamos el app.componente.html
+
+
 
 
 
