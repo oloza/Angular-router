@@ -24,7 +24,9 @@ const routes: Routes = [
        ]
       },
   
-  // {path:'', redirectTo: '/home', pathMatch: 'full'},
+   {path:'cms',
+    loadChildren:()=>import('./cms/cms.module').then(m=>m.CmsModule)
+    },
   {path: '**', component: NotFoundComponent}
 ];
 

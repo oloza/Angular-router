@@ -129,6 +129,18 @@ el flag --routing nos permite crear un modulo con rutas
 `ng g m cms --routing`
 create component tasks
 `ng g c cms/pages/tasks`
+`ng g c cms/pages/grid`
+`ng g c cms/components/layout`
+
+el cms routing.module.ts tiene el import con `RouterModule.forChild(routes)`
+son modulos del tipo feature
+importar el modulo en el path:
+
+habilita a acer lazy loading y code splitting
+loadChildren:()=>import('./cms/cms.module').then(m=>m.CmsModule)
+
+
+
 
 
 
