@@ -139,13 +139,10 @@ importar el modulo en el path:
 habilita a acer lazy loading y code splitting
 loadChildren:()=>import('./cms/cms.module').then(m=>m.CmsModule)
 
-
-
-
-
-
-
-
-
-
-
+# Creando en Website Module 
+ng g m website --routing
+"un componente sólo puede pertenecer a un modulo "
+para cargar 
+ {path:'',
+    loadChildren:()=>import('./website/website.module').then(m=>m.WebsiteModule)
+   },
