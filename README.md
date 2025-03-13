@@ -146,3 +146,9 @@ para cargar
  {path:'',
     loadChildren:()=>import('./website/website.module').then(m=>m.WebsiteModule)
    },
+
+# Creando un Shared Module 
+incluir los componentes que otros modulos quieren compartir entre sí
+ng g m shared   no tiene routing
+
+
