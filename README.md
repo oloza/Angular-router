@@ -150,5 +150,5 @@ para cargar
 # Creando un Shared Module 
 incluir los componentes que otros modulos quieren compartir entre sí
 ng g m shared   no tiene routing
-
+en el módulo importar y exportar los componentees.
 
