@@ -152,3 +152,10 @@ incluir los componentes que otros modulos quieren compartir entre sí
 ng g m shared   no tiene routing
 en el módulo importar y exportar los componentees.
 
+# Precarga de modulos
+creamos un nuevo modulo para category
+
+ng g m website/pages/catagory --routing
+esta bien modularizar y usar lazy loading
+pero en redes lentas tiene sus desventajas ya que al utilar el path del modulo este cargará dependiendo
+la velocidad de internet.
