@@ -198,6 +198,21 @@ tambien cargar el customPreloadServices
 })
 
 recomandacion:
-
 preloadAllModules-> pocos chunks
 customStrategy -> varios chunks
+
+# QuickLink Strategy
+carga los modulos de los links que se presentan en la pantalla
+esta tecnica no es oficial  de Angular,sino de la comunidad
+ngx-quicklink
+npm i ngx-quicklink --save
+
+se debe importar en el modulo principal y en los modulos donde se requiere
+    import { QuicklinkModule } from 'ngx-quicklink';
+
+la estrategia debe ir en la ruta 
+    import { QuicklinkStrategy } from 'ngx-quicklink';
+
+
+
+

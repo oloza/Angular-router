@@ -15,6 +15,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { WebsiteRoutingModule } from './website-routing.module';
 import { SwiperModule } from 'swiper/angular';
 import { share } from 'rxjs';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { share } from 'rxjs';
     CommonModule,
     WebsiteRoutingModule,
     SwiperModule,
-    SharedModule
+    SharedModule,
+    QuicklinkModule
   ]
 })
 export class WebsiteModule { }
