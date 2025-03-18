@@ -159,3 +159,45 @@ ng g m website/pages/catagory --routing
 esta bien modularizar y usar lazy loading
 pero en redes lentas tiene sus desventajas ya que al utilar el path del modulo este cargará dependiendo
 la velocidad de internet.
+
+# AlModules & CustomStrategy
+descargar,parsear,compilar y ejecutar
+aprovechar la descarga y en el tiempo libre descargar los otros modulos
+despues del render inicial precarga los módulos
+para habilitar la precarga ir a app-routing (forRoot)
+import PreloadAllModules
+    import {PreloadAllModules } from '@angular/router';
+en la directiva @NgModule agregar: preloadingStrategy:PreloadAllModules
+  @NgModule({
+  imports: [RouterModule.forRoot(routes,{
+    preloadingStrategy:PreloadAllModules
+  })]
+con modulos pequeños funciona, be carefull with project with too much modules
+
+para cargas personalizadas:
+creamos un servicio y en el servicio implementamos el PreloadingStrategy
+    preload(route: Route, load: () => Observable<any>): Observable<any> {
+        if(route.data && route.data['preload']){
+        return load();
+        }
+        return of(null);
+    }
+
+y lo implementamos en la rutas
+    path:...
+    loadChildren:...
+    data:{
+        preload:true,
+    }
+tambien cargar el customPreloadServices
+@ngModule({
+    imports:[RouterModule.forRoot(routes,{
+    preloadingStrategy:CustomPreloadService
+    })],
+    exports:[RouterModule]
+})
+
+recomandacion:
+
+preloadAllModules-> pocos chunks
+customStrategy -> varios chunks
