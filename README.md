@@ -224,3 +224,5 @@ npm i ngx-quicklink --save
     ()CanDeactivate
     ()CanLoad
 crea un boilerplate injectable
+
+# implementando redirects
