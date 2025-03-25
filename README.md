@@ -206,13 +206,21 @@ carga los modulos de los links que se presentan en la pantalla
 esta tecnica no es oficial  de Angular,sino de la comunidad
 ngx-quicklink
 npm i ngx-quicklink --save
+"ngx-quicklink": "^0.3.1"  para la version desktop actual 15.1.6
 
-se debe importar en el modulo principal y en los modulos donde se requiere
+-se debe importar en el modulo principal y en los modulos donde se requiere
     import { QuicklinkModule } from 'ngx-quicklink';
 
-la estrategia debe ir en la ruta 
+-la estrategia debe ir en la ruta 
     import { QuicklinkStrategy } from 'ngx-quicklink';
 
+# conoce a los guardianes
+-forma de proteger las rutas
+-para grear un guardian 
+    ng g g guards/auth
 
-
-
+    (*)CanActivate  //dar acceso o no a una ruta
+    ()CanActivateChild
+    ()CanDeactivate
+    ()CanLoad
+crea un boilerplate injectable
