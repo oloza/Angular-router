@@ -12,9 +12,15 @@ export class ProfileComponent implements OnInit {
   constructor(public authService: AuthService) { }
   
   ngOnInit(): void {
-  this.authService.getProfile()
+  // this.authService.getProfile()
+  // .subscribe( (data) => {
+  //   this.user = data; 
+  //   });
+  
+  this.authService.user$
   .subscribe( (data) => {
     this.user = data; 
     });
+
   }
 }

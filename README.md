@@ -226,3 +226,5 @@ npm i ngx-quicklink --save
 crea un boilerplate injectable
 
 # implementando redirects
+#
+switchmap es para cambiar de observador
