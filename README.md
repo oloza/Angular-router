@@ -228,3 +228,5 @@ crea un boilerplate injectable
 # implementando redirects
 #
 switchmap es para cambiar de observador
+
+# guardian para Admin
