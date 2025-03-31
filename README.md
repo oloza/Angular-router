@@ -230,3 +230,12 @@ crea un boilerplate injectable
 switchmap es para cambiar de observador
 
 # guardian para Admin
+ng g g guards/admin
+-implements CanActivate
+
+# guardian para Admin
+ng g g guards/exit
+-como interactuar con canDeactivate desde un componente
+-en el guardian creamos una interfaz OnExit
+canDeactivate(
+    component: onExit,

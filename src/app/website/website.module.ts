@@ -16,6 +16,7 @@ import { WebsiteRoutingModule } from './website-routing.module';
 import { SwiperModule } from 'swiper/angular';
 import { share } from 'rxjs';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
         RecoveryComponent,
         ProfileComponent,
         ProductDetailComponent,
-        LayoutComponent
+        LayoutComponent,
+        RegisterComponent
   ],
   imports: [
     CommonModule,
